@@ -1,0 +1,11 @@
+basicConstraints = critical, CA:FALSE
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+crlDistributionPoints = URI:http://crl.acmeca.com/dv-ca.crl
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+
+[alt_names]
+DNS.1 = www.acmeca.com
+DNS.2 = acmeca.com

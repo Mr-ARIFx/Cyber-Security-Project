@@ -1,0 +1,61 @@
+# =========================
+# PKI PRIVATE / SECRET DATA
+# =========================
+
+**/private/
+**/passphrase.txt
+**/*.key.pem
+**/*.key
+**/*.pem
+
+# PKI databases / CA state
+**/index.txt
+**/index.txt.*
+**/serial
+**/serial.*
+**/crlnumber
+**/crlnumber.*
+**/newcerts/
+
+# =========================
+# DATABASE / USER DATA
+# =========================
+
+**/*.sqlite
+**/*.sqlite3
+**/*.db
+**/storage/applications/
+
+# =========================
+# ISSUED CERTIFICATES
+# =========================
+
+**/storage/issued/
+**/*.crt
+**/*-chain.pem
+**/*fullchain*.pem
+
+# =========================
+# APPLICATION SECRETS
+# =========================
+
+.env
+.env.*
+config.local.php
+secrets.php
+
+# =========================
+# LOGS
+# =========================
+
+*.log
+logs/
+
+# =========================
+# OS / EDITOR FILES
+# =========================
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

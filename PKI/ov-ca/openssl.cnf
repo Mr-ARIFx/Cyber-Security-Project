@@ -1,0 +1,52 @@
+[ ca ]
+default_ca = CA_default
+
+
+[ CA_default ]
+
+dir               = /home/prime/pki/ov-ca
+database          = $dir/index.txt
+new_certs_dir     = $dir/newcerts
+
+certificate       = $dir/certs/ov-ca.cert.pem
+private_key       = $dir/private/ov-ca.key.pem
+
+serial            = $dir/serial
+crl_dir           = $dir/crl
+crlnumber         = $dir/crlnumber
+
+default_md        = sha256
+default_days      = 365
+default_crl_days  = 365
+
+policy            = policy_loose
+
+x509_extensions   = ov_server_cert
+
+
+[ policy_loose ]
+
+countryName             = optional
+stateOrProvinceName     = optional
+localityName            = optional
+organizationName        = optional
+organizationalUnitName  = optional
+commonName              = supplied
+emailAddress            = optional
+
+
+[ ov_server_cert ]
+
+basicConstraints = critical, CA:FALSE
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+crlDistributionPoints = URI:http://acmeca.com/crl/ovsubca.crl
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+
+
+[ alt_names ]
+
+DNS.1 = www.acmeca.com
+DNS.2 = acmeca.com

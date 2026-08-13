@@ -1,0 +1,21 @@
+body{
+    background:#f5f7fb;
+}
+
+.card{
+    border:none;
+    border-radius:15px;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    transition:.3s;
+}
+
+.btn-info{
+    padding:12px 28px;
+}
+
+footer{
+    margin-top:40px;
+}

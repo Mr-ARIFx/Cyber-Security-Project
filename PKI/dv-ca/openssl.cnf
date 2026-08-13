@@ -1,0 +1,44 @@
+[ ca ]
+default_ca = CA_default
+
+[ CA_default ]
+dir               = /home/prime/pki/dv-ca
+certs             = $dir/certs
+crl_dir           = $dir/crl
+new_certs_dir     = $dir/newcerts
+database          = $dir/index.txt
+serial            = $dir/serial
+crlnumber         = $dir/crlnumber
+
+private_key       = $dir/private/dv-ca.key.pem
+certificate       = $dir/certs/dv-ca.cert.pem
+
+default_md        = sha256
+default_days      = 365
+default_crl_days  = 365
+
+policy            = policy_any
+email_in_dn       = yes
+copy_extensions   = none
+
+[ policy_any ]
+countryName             = optional
+stateOrProvinceName     = optional
+localityName            = optional
+organizationName        = optional
+organizationalUnitName  = optional
+commonName              = supplied
+emailAddress            = optional
+
+[ server_cert ]
+basicConstraints = critical, CA:FALSE
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+crlDistributionPoints = URI:http://acmeca.com/crl/dvsubca.crl
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+
+[ alt_names ]
+DNS.1 = www.acmeca.com
+DNS.2 = acmeca.com

@@ -1,0 +1,12 @@
+[server_cert]
+
+basicConstraints = critical, CA:FALSE
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+
+subjectAltName = DNS:apply.acmeca.com
+
+crlDistributionPoints = URI:http://acmeca.com/crl/ovsubca.crl
+
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
