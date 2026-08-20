@@ -1740,11 +1740,14 @@ The project therefore demonstrates the complete interaction between **identity, 
 # 👨‍💻 Authors
 
 **Md. Ariful Islam**
+
 **Imtiaz Ahmed Tajun**
+
 GitHub:
 
 `https://github.com/Mr-ARIFx`
-'https://github.com/20WhiteFang01'
+
+`https://github.com/20WhiteFang01`
 
 Repository:
 
